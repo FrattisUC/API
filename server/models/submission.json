@@ -1,0 +1,60 @@
+{
+  "name": "Submission",
+  "plural": "submissions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "problem_id": {
+      "type": "number",
+      "required": true
+    },
+    "user_id": {
+      "type": "number",
+      "required": true
+    },
+    "status": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "url_content": {
+      "type": "string",
+      "required": true
+    },
+    "kattis_result": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "problem": {
+      "type": "belongsTo",
+      "model": "Problem",
+      "foreignKey": "problem_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "submission": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "user_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "human": {
+      "type": "belongsTo",
+      "model": "Human",
+      "foreignKey": "user_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

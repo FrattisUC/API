@@ -1,0 +1,23 @@
+{
+  "name": "Human",
+  "plural": "Humans",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "submissions": {
+      "type": "hasMany",
+      "model": "Submission",
+      "foreignKey": "user_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

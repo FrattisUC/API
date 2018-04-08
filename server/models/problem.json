@@ -1,0 +1,55 @@
+{
+  "name": "Problem",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "is_program": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "test": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "tests": {
+      "type": "hasMany",
+      "model": "Test",
+      "foreignKey": "problem_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "problemSets": {
+      "type": "hasAndBelongsToMany",
+      "model": "ProblemSet",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "submissions": {
+      "type": "hasMany",
+      "model": "Submission",
+      "foreignKey": "problem_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

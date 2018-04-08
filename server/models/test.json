@@ -1,0 +1,40 @@
+{
+  "name": "Test",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "input": {
+      "type": "string",
+      "required": true
+    },
+    "output": {
+      "type": "string",
+      "required": true
+    },
+    "is_public": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "problem_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "problem": {
+      "type": "belongsTo",
+      "model": "Problem",
+      "foreignKey": "problem_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

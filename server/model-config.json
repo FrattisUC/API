@@ -34,5 +34,25 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Problem": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Test": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ProblemSet": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Submission": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Human": {
+    "dataSource": "db",
+    "public": true
   }
 }
