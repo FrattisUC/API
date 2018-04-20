@@ -19,7 +19,7 @@
     "url": "",
     "database": "vjudge_psql_dev",
     "password": "frattis",
-    "name": "vjudge_psql_dev",
+    "name": "psql_db",
     "user": "progra2020",
     "connector": "postgresql"
   }

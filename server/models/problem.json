@@ -34,12 +34,13 @@
       }
     },
     "problemSets": {
-      "type": "hasAndBelongsToMany",
+      "type": "hasMany",
       "model": "ProblemSet",
-      "foreignKey": "",
+      "foreignKey": "problem_id",
       "options": {
         "nestRemoting": true
-      }
+      },
+      "through": "ProblemProblemSet"
     },
     "submissions": {
       "type": "hasMany",
