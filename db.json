@@ -7,7 +7,8 @@
     "Role": 1,
     "Problem": 5,
     "Test": 2,
-    "ProblemSet": 2
+    "ProblemSet": 2,
+    "HumanRole": 2
   },
   "models": {
     "User": {
@@ -28,6 +29,9 @@
     },
     "ProblemSet": {
       "1": "{\"name\":\"set de fibonaccis\",\"description\":\"todos diferentes entre sí\",\"start_time\":\"2018-04-06T19:14:43.116Z\",\"end_time\":\"2018-04-10T19:14:43.116Z\",\"restricted_access\":false,\"id\":1}"
+    },
+    "HumanRole": {
+      "1": "{\"name\":\"admin\",\"id\":1}"
     }
   }
 }
