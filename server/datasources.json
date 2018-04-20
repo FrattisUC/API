@@ -3,5 +3,13 @@
     "name": "db",
     "connector": "memory",
     "file": "db.json"
+  },
+  "redis_db_dev": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "password": "progra2020vjudge",
+    "name": "redis_db_dev",
+    "db": 1,
+    "connector": "kv-redis"
   }
 }

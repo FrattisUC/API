@@ -62,5 +62,9 @@
   "HumanRole": {
     "dataSource": "db",
     "public": true
+  },
+  "UserRoleCourse": {
+    "dataSource": "redis_db_dev",
+    "public": true
   }
 }

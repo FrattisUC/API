@@ -11,30 +11,38 @@
 ---
 
 ### User
-Built-in model of LoopBack.js
+&nbsp;&nbsp;&nbsp; Built-in model of LoopBack.js
+
+#### Attributes:
 ##### &nbsp;&nbsp; name:string
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Full name of the user.  
 ##### &nbsp;&nbsp; email:string
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email of the user.
 
 ---
 
 ### Human
-Extends User.
+&nbsp;&nbsp;&nbsp;Extends User.
 
-Relations:
+#### Relations:
 1. `has_many`: `submissions`
+
+#### Attributes:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None
 
 ---
 
 ### Problem
-Relations:
+#### Relations:
 1. `has_many`: `Tests`, `Submissions`
 2. `has_and_belongs_to_many`: `ProblemSets`
 
-#### &nbsp;&nbsp; name: string
-#### &nbsp;&nbsp; is_program: boolean
+#### Attributes:
+##### &nbsp;&nbsp; name: string
+##### &nbsp;&nbsp; is_program: boolean
 &nbsp;Default: false
-#### &nbsp;&nbsp; description: string
-#### &nbsp;&nbsp; `Tests`: object array
+##### &nbsp;&nbsp; description: string
+##### &nbsp;&nbsp; `Tests`: object array
 &nbsp;`test` model (object) related to input and output files of the problem.
 &nbsp;Access using Problem.tests
 
@@ -44,31 +52,33 @@ Relations:
 Relations:
 1. `belongs_to`: `Problem`
 
-#### &nbsp;&nbsp; input:string
+#### Attributes:
+##### &nbsp;&nbsp; input:string
 &nbsp;ULR to input file
-#### &nbsp;&nbsp; output:strign
+##### &nbsp;&nbsp; output:strign
 &nbsp;ULR to input file
-#### &nbsp;&nbsp; is_public:boolean
+##### &nbsp;&nbsp; is_public:boolean
 &nbsp;Public tests are for examples, not evaluations.
 &nbsp;Default: `false`
 
 ---
 
 ### ProblemSet
-Relations:
+#### Relations:
 1. `has_and_belongs_to_many`: `Problems`
 
-#### &nbsp;&nbsp; name:string
-#### &nbsp;&nbsp; description:string
-#### &nbsp;&nbsp; start_time:date
-#### &nbsp;&nbsp; end_time:date
-#### &nbsp;&nbsp; restricted_access:boolean
+#### Attributes:
+##### &nbsp;&nbsp; name:string
+##### &nbsp;&nbsp; description:string
+##### &nbsp;&nbsp; start_time:date
+##### &nbsp;&nbsp; end_time:date
+##### &nbsp;&nbsp; restricted_access:boolean
 &nbsp;Used to filter access to certain sets (evaluations, for example)
 
 ---
 
 ### Submission
-Relations:
+#### Relations:
 1. `belongs_to`: `Problem`, `Human`
 
 #### &nbsp;&nbsp; problem_id:number
