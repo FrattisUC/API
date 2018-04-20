@@ -20,4 +20,4 @@ node bin/automigrate.js
 node bin/autoupdate.js
 ```
 
-** Use automigrate ONLY if you want to delete the storaged data. Use autoupdate if you want to keep it! **
+**Use automigrate ONLY if you want to delete the storaged data. Use autoupdate if you want to keep it!**
