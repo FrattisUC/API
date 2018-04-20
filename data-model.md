@@ -21,7 +21,8 @@ Built-in model of LoopBack.js
 Extends User.
 
 Relations:
-1. `has_many`: `submissions`
+1. `has_many`: `UserRoleCourse`
+2. `has_many`: `submissions`
 
 ---
 
@@ -86,3 +87,32 @@ Relations:
 &nbsp;URL string to .zip files.
 #### &nbsp;&nbsp; kattis_result:string
 &nbsp;URL to the file with the results. **The judge must return a file with them.**
+
+---
+
+### Course
+Relations:
+1. `has_many`: `UserRoleCourse`
+
+#### &nbsp;&nbsp; name:string
+#### &nbsp;&nbsp; section:number
+#### &nbsp;&nbsp; year:number
+#### &nbsp;&nbsp; period:number
+
+---
+
+### HumanRole
+Relations:
+1. `has_many`: `UserRoleCourse`
+
+#### &nbsp;&nbsp; name:string
+
+---
+
+### UserRoleCourse
+Relations:
+1. `belongs_to`: `Human`
+2. `belongs_to`: `HumanRole`
+3. `belongs_to`: `Course`
+
+#### &nbsp;&nbsp; name:string
