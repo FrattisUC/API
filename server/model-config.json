@@ -62,5 +62,9 @@
   "HumanRole": {
     "dataSource": "db",
     "public": true
+  },
+  "User_role_course": {
+    "dataSource": "psql_db",
+    "public": true
   }
 }

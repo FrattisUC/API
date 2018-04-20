@@ -3,5 +3,24 @@
     "name": "db",
     "connector": "memory",
     "file": "db.json"
+  },
+  "redis_db": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "url": "",
+    "password": "",
+    "name": "redis_db",
+    "db": 0,
+    "connector": "kv-redis"
+  },
+  "psql_db": {
+    "host": "127.0.0.1",
+    "port": 5432,
+    "url": "",
+    "database": "vjudge_psql_db",
+    "password": "frattis",
+    "name": "vjudge_psql_db",
+    "user": "progra2020",
+    "connector": "postgresql"
   }
 }

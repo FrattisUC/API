@@ -16,6 +16,14 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "userRoleCourses": {
+      "type": "hasMany",
+      "model": "User_role_course",
+      "foreignKey": "human_id",
+      "options": {
+        "nestRemoting": true
+      }
     }
   },
   "acls": [],

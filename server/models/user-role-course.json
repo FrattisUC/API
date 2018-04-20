@@ -1,0 +1,52 @@
+{
+  "name": "User_role_course",
+  "plural": "User_role_courses",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "human_id": {
+      "type": "number",
+      "required": true
+    },
+    "role_id": {
+      "type": "number",
+      "required": true
+    },
+    "course_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "course": {
+      "type": "belongsTo",
+      "model": "Course",
+      "foreignKey": "course_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "human": {
+      "type": "belongsTo",
+      "model": "Human",
+      "foreignKey": "human_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "humanRole": {
+      "type": "belongsTo",
+      "model": "HumanRole",
+      "foreignKey": "role_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
