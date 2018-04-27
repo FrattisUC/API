@@ -22,14 +22,14 @@ Extends User.
 
 Relations:
 1. `has_many`: `UserRoleCourse`
-2. `has_many`: `submissions`
+2. `has_many`: `Submissions`
 
 ---
 
 ### Problem
 Relations:
 1. `has_many`: `Tests`, `Submissions`
-2. `has_and_belongs_to_many`: `ProblemSets`
+2. `has_many`: `ProblemSets` through `ProblemProblemSet`
 
 #### &nbsp;&nbsp; name: string
 #### &nbsp;&nbsp; is_program: boolean
@@ -57,7 +57,7 @@ Relations:
 
 ### ProblemSet
 Relations:
-1. `has_and_belongs_to_many`: `Problems`
+1. `has_many`: `Problems` through `ProblemProblemSet`
 
 #### &nbsp;&nbsp; name:string
 #### &nbsp;&nbsp; description:string
@@ -116,3 +116,14 @@ Relations:
 3. `belongs_to`: `Course`
 
 #### &nbsp;&nbsp; name:string
+
+---
+
+### ProblemProblemSet
+Connects `Problem` with `ProblemSet`
+Relations:
+1. `belongs_to`: `Problem`
+2. `belongs_to`: `ProblemSet`
+
+#### &nbsp;&nbsp; problem_is:number
+#### &nbsp;&nbsp; problem_set_is:number
