@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function(Submission) {
+  let isURL = require('validator/lib/isURL');
 
   // Validación status;
   const statusList = {"0" : "pending", "1" : "done", "2" : "failure"};
@@ -20,6 +21,18 @@ module.exports = function(Submission) {
     );
 
   // validación url_content
+  const validURL = function (urlContent) {
+    return(isURL(urlContent));
+  };
 
+  const validateURL = function(err){
+    if(!validURL(this.url_content)){
+      err();
+    }
+  };
+
+  Submission.validate('url_content', validateURL, {
+    message: 'Not a valid URL', }
+    );
 
 };
