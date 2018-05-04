@@ -19,7 +19,7 @@
       "required": true,
       "default": false
     },
-    "problem_id": {
+    "problemId": {
       "type": "number",
       "required": true
     }
@@ -29,7 +29,7 @@
     "problem": {
       "type": "belongsTo",
       "model": "Problem",
-      "foreignKey": "problem_id",
+      "foreignKey": "problemId",
       "options": {
         "nestRemoting": true
       }

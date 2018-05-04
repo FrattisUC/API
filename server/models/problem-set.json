@@ -30,7 +30,7 @@
     "problems": {
       "type": "hasMany",
       "model": "Problem",
-      "foreignKey": "problem_set_id",
+      "foreignKey": "problemSetId",
       "options": {
         "nestRemoting": true
       },

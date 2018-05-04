@@ -25,7 +25,7 @@
     "tests": {
       "type": "hasMany",
       "model": "Test",
-      "foreignKey": "problem_id",
+      "foreignKey": "problemId",
       "options": {
         "nestRemoting": true
       }
@@ -33,7 +33,7 @@
     "problemSets": {
       "type": "hasMany",
       "model": "ProblemSet",
-      "foreignKey": "problem_id",
+      "foreignKey": "problemId",
       "options": {
         "nestRemoting": true
       },
@@ -42,7 +42,7 @@
     "submissions": {
       "type": "hasMany",
       "model": "Submission",
-      "foreignKey": "problem_id",
+      "foreignKey": "problemId",
       "options": {
         "nestRemoting": true
       }

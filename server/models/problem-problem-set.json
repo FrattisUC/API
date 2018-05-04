@@ -7,11 +7,11 @@
     "validateUpsert": true
   },
   "properties": {
-    "problem_set_id": {
+    "problemSetId": {
       "type": "number",
       "required": true
     },
-    "problem_id": {
+    "problemId": {
       "type": "number",
       "required": true
     }
@@ -21,7 +21,7 @@
     "problem": {
       "type": "belongsTo",
       "model": "Problem",
-      "foreignKey": "problem_id",
+      "foreignKey": "problemId",
       "options": {
         "nestRemoting": true
       }
@@ -29,7 +29,7 @@
     "problemSet": {
       "type": "belongsTo",
       "model": "ProblemSet",
-      "foreignKey": "problem_set_id",
+      "foreignKey": "problemSetId",
       "options": {
         "nestRemoting": true
       }

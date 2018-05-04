@@ -26,7 +26,7 @@
     "userRoleCourses": {
       "type": "hasMany",
       "model": "User_role_course",
-      "foreignKey": "course_id",
+      "foreignKey": "courseId",
       "options": {
         "nestRemoting": true
       }
