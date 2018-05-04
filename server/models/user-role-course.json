@@ -47,6 +47,9 @@
       }
     }
   },
+  "mixins": {
+    "BelongsToIntegrityCheck": {}
+  },
   "acls": [],
   "methods": {}
 }
