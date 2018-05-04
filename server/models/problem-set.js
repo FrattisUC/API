@@ -2,17 +2,17 @@
 
 module.exports = function(Problemset) {
 
-  const biggerDate = function(start_date, end_date){
-    return(end_date > start_date);
+  const biggerDate = function(startDate, endDate){
+    return(endDate > startDate);
   };
 
   const validateBiggerDate = function(err){
-    if(!biggerDate(this.start_time, this.end_time)){
+    if(!biggerDate(this.startTime, this.endTime)){
       err();
     }
   };
 
-  Problemset.validate('end_time', validateBiggerDate, {
+  Problemset.validate('endTime', validateBiggerDate, {
     message: 'End time should be bigger than the start time',
   });
 

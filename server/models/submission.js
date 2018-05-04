@@ -26,12 +26,12 @@ module.exports = function(Submission) {
   };
 
   const validateURL = function(err){
-    if(!validURL(this.url_content)){
+    if(!validURL(this.urlContent)){
       err();
     }
   };
 
-  Submission.validate('url_content', validateURL, {
+  Submission.validate('urlContent', validateURL, {
     message: 'Not a valid URL', }
     );
 
