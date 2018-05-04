@@ -10,7 +10,7 @@
       "type": "string",
       "required": true
     },
-    "is_program": {
+    "isProgram": {
       "type": "boolean",
       "required": true,
       "default": false

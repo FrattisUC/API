@@ -13,13 +13,13 @@
     "description": {
       "type": "string"
     },
-    "start_time": {
+    "startTime": {
       "type": "date"
     },
-    "end_time": {
+    "endTime": {
       "type": "date"
     },
-    "restricted_access": {
+    "restrictedAccess": {
       "type": "boolean",
       "required": true,
       "default": false

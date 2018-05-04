@@ -20,11 +20,11 @@
       "required": true,
       "default": 0
     },
-    "url_content": {
+    "urlContent": {
       "type": "string",
       "required": true
     },
-    "kattis_result": {
+    "kattisResult": {
       "type": "string"
     }
   },

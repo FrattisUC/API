@@ -14,7 +14,7 @@
       "type": "string",
       "required": true
     },
-    "is_public": {
+    "isPublic": {
       "type": "boolean",
       "required": true,
       "default": false
