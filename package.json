@@ -23,6 +23,7 @@
     "loopback-connector-kv-redis": "^1.1.0",
     "loopback-connector-postgresql": "^2.9.0",
     "loopback-connector-redis": "^0.1.0",
+    "loopback-console": "^1.1.0",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^2.0.0"
   },

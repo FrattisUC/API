@@ -14,57 +14,57 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "vjudge_psql_dev"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "vjudge_psql_dev",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "vjudge_psql_dev",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "vjudge_psql_dev",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "vjudge_psql_dev",
     "public": false
   },
   "Problem": {
-    "dataSource": "db",
+    "dataSource": "vjudge_psql_dev",
     "public": true
   },
   "Test": {
-    "dataSource": "db",
+    "dataSource": "vjudge_psql_dev",
     "public": true
   },
   "ProblemSet": {
-    "dataSource": "db",
+    "dataSource": "vjudge_psql_dev",
     "public": true
   },
   "Submission": {
-    "dataSource": "db",
+    "dataSource": "vjudge_psql_dev",
     "public": true
   },
   "Human": {
-    "dataSource": "db",
+    "dataSource": "vjudge_psql_dev",
     "public": true
   },
   "Course": {
-    "dataSource": "db",
+    "dataSource": "vjudge_psql_dev",
     "public": true
   },
   "HumanRole": {
-    "dataSource": "db",
+    "dataSource": "vjudge_psql_dev",
     "public": true
   },
   "User_role_course": {
-    "dataSource": "psql_db",
+    "dataSource": "vjudge_psql_dev",
     "public": true
   }
 }

@@ -1,8 +1,13 @@
-{
-    "db": {
-      "name": "db",
-      "connector": "memory",
-      "file": "db.json"
-    }   
+{   
+  "vjudge_psql_test": {
+    "host": "127.0.0.1",
+    "port": 5432,
+    "url": "",
+    "database": "vjudge_psql_test",
+    "password": "frattis",
+    "name": "vjudge_psql_test",
+    "user": "progra2020",
+    "connector": "postgresql"
   }
+}
   

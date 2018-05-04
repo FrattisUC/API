@@ -13,7 +13,7 @@
     "db": 0,
     "connector": "kv-redis"
   },
-  "psql_db": {
+  "vjudge_psql_dev": {
     "host": "127.0.0.1",
     "port": 5432,
     "url": "",
