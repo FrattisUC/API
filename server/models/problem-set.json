@@ -13,13 +13,13 @@
     "description": {
       "type": "string"
     },
-    "start_time": {
+    "startTime": {
       "type": "date"
     },
-    "end_time": {
+    "endTime": {
       "type": "date"
     },
-    "restricted_access": {
+    "restrictedAccess": {
       "type": "boolean",
       "required": true,
       "default": false
@@ -28,12 +28,13 @@
   "validations": [],
   "relations": {
     "problems": {
-      "type": "hasAndBelongsToMany",
+      "type": "hasMany",
       "model": "Problem",
-      "foreignKey": "",
+      "foreignKey": "problemSetId",
       "options": {
         "nestRemoting": true
-      }
+      },
+      "through": "ProblemProblemSet"
     }
   },
   "acls": [],

@@ -1,47 +1,35 @@
 {
-  "name": "UserRoleCourse",
-  "plural": "UserRoleCourses",
+  "name": "ProblemProblemSet",
+  "plural": "ProblemProblemSets",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "humanId": {
+    "problemSetId": {
       "type": "number",
       "required": true
     },
-    "roleId": {
-      "type": "number",
-      "required": true
-    },
-    "courseId": {
+    "problemId": {
       "type": "number",
       "required": true
     }
   },
   "validations": [],
   "relations": {
-    "course": {
+    "problem": {
       "type": "belongsTo",
-      "model": "Course",
-      "foreignKey": "courseId",
+      "model": "Problem",
+      "foreignKey": "problemId",
       "options": {
         "nestRemoting": true
       }
     },
-    "human": {
+    "problemSet": {
       "type": "belongsTo",
-      "model": "Human",
-      "foreignKey": "humanId",
-      "options": {
-        "nestRemoting": true
-      }
-    },
-    "humanRole": {
-      "type": "belongsTo",
-      "model": "HumanRole",
-      "foreignKey": "roleId",
+      "model": "ProblemSet",
+      "foreignKey": "problemSetId",
       "options": {
         "nestRemoting": true
       }

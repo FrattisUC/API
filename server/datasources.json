@@ -13,13 +13,13 @@
     "db": 0,
     "connector": "kv-redis"
   },
-  "vjudge_psql_dev": {
+  "psql_db": {
     "host": "127.0.0.1",
     "port": 5432,
     "url": "",
     "database": "vjudge_psql_dev",
     "password": "frattis",
-    "name": "vjudge_psql_dev",
+    "name": "psql_db",
     "user": "progra2020",
     "connector": "postgresql"
   }
