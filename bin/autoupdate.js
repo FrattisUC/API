@@ -5,7 +5,7 @@ var ds = server.dataSources.psql_db;
 // CADA VEZ QUE SE CREE UN NUEVO MODELO SE DEBE AGREGAR EN ESTA LISTA
 var lbTables = ['User', 'AccessToken', 'ACL', 'RoleMapping', 'Role', 'Problem',
                 'Test', 'ProblemSet', 'Submission', 'Human', 'Course', 'HumanRole',
-                'ProblemProblemSet', 'User_role_course'];
+                'ProblemProblemSet', 'UserRoleCourse'];
 ds.autoupdate(lbTables, function(er) {
   if (er) {
     console.log("error en las migraciones!!!!!");
@@ -16,4 +16,4 @@ ds.autoupdate(lbTables, function(er) {
 });
 
 
-// , 'Test', 'ProblemSet', 'Submission', 'Human', 'Course', 'HumanRole', 'User_role_course'
+// , 'Test', 'ProblemSet', 'Submission', 'Human', 'Course', 'HumanRole', 'UserRoleCourse'

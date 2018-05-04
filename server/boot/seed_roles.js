@@ -7,6 +7,7 @@ module.exports = function(app) {
   //data sources
   var psqlDs = app.dataSources[psqlDatasourceName];
   //create all models
+
   async.parallel({
     roles: async.apply(createRoles)
   }, function(err, results) {

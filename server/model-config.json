@@ -63,7 +63,7 @@
     "dataSource": "psql_db",
     "public": true
   },
-  "User_role_course": {
+  "UserRoleCourse": {
     "dataSource": "psql_db",
     "public": true
   },
