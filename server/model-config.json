@@ -54,5 +54,13 @@
   "Human": {
     "dataSource": "db",
     "public": true
+  },
+  "Course": {
+    "dataSource": "db",
+    "public": true
+  },
+  "HumanRole": {
+    "dataSource": "db",
+    "public": true
   }
 }
