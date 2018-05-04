@@ -13,7 +13,16 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "userRoleCourses": {
+      "type": "hasMany",
+      "model": "UserRoleCourse",
+      "foreignKey": "roleId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

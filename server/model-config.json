@@ -14,53 +14,61 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "psql_db"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "psql_db",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "psql_db",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "psql_db",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "psql_db",
     "public": false
   },
   "Problem": {
-    "dataSource": "db",
+    "dataSource": "psql_db",
     "public": true
   },
   "Test": {
-    "dataSource": "db",
+    "dataSource": "psql_db",
     "public": true
   },
   "ProblemSet": {
-    "dataSource": "db",
+    "dataSource": "psql_db",
     "public": true
   },
   "Submission": {
-    "dataSource": "db",
+    "dataSource": "psql_db",
     "public": true
   },
   "Human": {
-    "dataSource": "db",
+    "dataSource": "psql_db",
     "public": true
   },
   "Course": {
-    "dataSource": "db",
+    "dataSource": "psql_db",
     "public": true
   },
   "HumanRole": {
-    "dataSource": "db",
+    "dataSource": "psql_db",
+    "public": true
+  },
+  "UserRoleCourse": {
+    "dataSource": "psql_db",
+    "public": true
+  },
+  "ProblemProblemSet": {
+    "dataSource": "psql_db",
     "public": true
   }
 }

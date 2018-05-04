@@ -10,7 +10,7 @@
       "type": "string",
       "required": true
     },
-    "is_program": {
+    "isProgram": {
       "type": "boolean",
       "required": true,
       "default": false
@@ -18,9 +18,6 @@
     "description": {
       "type": "string",
       "required": true
-    },
-    "test": {
-      "type": "object"
     }
   },
   "validations": [],
@@ -28,23 +25,24 @@
     "tests": {
       "type": "hasMany",
       "model": "Test",
-      "foreignKey": "problem_id",
+      "foreignKey": "problemId",
       "options": {
         "nestRemoting": true
       }
     },
     "problemSets": {
-      "type": "hasAndBelongsToMany",
+      "type": "hasMany",
       "model": "ProblemSet",
-      "foreignKey": "",
+      "foreignKey": "problemId",
       "options": {
         "nestRemoting": true
-      }
+      },
+      "through": "ProblemProblemSet"
     },
     "submissions": {
       "type": "hasMany",
       "model": "Submission",
-      "foreignKey": "problem_id",
+      "foreignKey": "problemId",
       "options": {
         "nestRemoting": true
       }

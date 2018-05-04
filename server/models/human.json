@@ -6,13 +6,26 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true
+    }
+  },
   "validations": [],
   "relations": {
     "submissions": {
       "type": "hasMany",
       "model": "Submission",
-      "foreignKey": "user_id",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "userRoleCourses": {
+      "type": "hasMany",
+      "model": "UserRoleCourse",
+      "foreignKey": "humanId",
       "options": {
         "nestRemoting": true
       }

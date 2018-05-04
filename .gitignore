@@ -14,6 +14,8 @@
 .idea
 .project
 .strong-pm
+.jshintrc
 coverage
 node_modules
 npm-debug.log
+dump.rdb

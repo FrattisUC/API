@@ -1,33 +1,16 @@
 {
   "ids": {
-    "User": 2,
+    "User": 1,
     "AccessToken": 1,
     "ACL": 1,
     "RoleMapping": 1,
-    "Role": 1,
-    "Problem": 5,
-    "Test": 2,
-    "ProblemSet": 2
+    "Role": 1
   },
   "models": {
-    "User": {
-      "1": "{\"realm\":\"string\",\"username\":\"kathy_del_flow\",\"password\":\"$2a$10$zhOpu5slWx7YB98.80F5eeeE5T.dXUVeCYfQC/OZyn1kcoluoL/ou\",\"email\":\"kfguerrero@uc.cl\",\"emailVerified\":false,\"id\":1}"
-    },
+    "User": {},
     "AccessToken": {},
     "ACL": {},
     "RoleMapping": {},
-    "Role": {},
-    "Problem": {
-      "1": "{\"name\":\"Fibonacci\",\"is_program\":false,\"description\":\"Genere la 3a iteración de Fibonacci\",\"test\":{},\"id\":1}",
-      "2": "{\"name\":\"Fibonacci\",\"is_program\":false,\"description\":\"Genere la 3a iteración de Fibonacci\",\"test\":{},\"id\":2}",
-      "3": "{\"name\":\"Fibonacci\",\"is_program\":false,\"description\":\"Genere la 3a iteración de Fibonacci\",\"test\":{},\"id\":3}",
-      "4": "{\"name\":\"Fibonacci\",\"is_program\":false,\"description\":\"Genere la 3a iteración de Fibonacci\",\"test\":{},\"id\":4}"
-    },
-    "Test": {
-      "1": "{\"input\":\"3\",\"output\":\"2\",\"is_public\":true,\"problem_id\":1,\"id\":1}"
-    },
-    "ProblemSet": {
-      "1": "{\"name\":\"set de fibonaccis\",\"description\":\"todos diferentes entre sí\",\"start_time\":\"2018-04-06T19:14:43.116Z\",\"end_time\":\"2018-04-10T19:14:43.116Z\",\"restricted_access\":false,\"id\":1}"
-    }
+    "Role": {}
   }
 }

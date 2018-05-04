@@ -1,47 +1,31 @@
 {
-  "name": "Submission",
-  "plural": "submissions",
+  "name": "UserRoleCourse",
+  "plural": "UserRoleCourses",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "problemId": {
+    "humanId": {
       "type": "number",
       "required": true
     },
-    "userId": {
+    "roleId": {
       "type": "number",
       "required": true
     },
-    "status": {
+    "courseId": {
       "type": "number",
-      "required": true,
-      "default": 0
-    },
-    "urlContent": {
-      "type": "string",
       "required": true
-    },
-    "kattisResult": {
-      "type": "string"
     }
   },
   "validations": [],
   "relations": {
-    "problem": {
+    "course": {
       "type": "belongsTo",
-      "model": "Problem",
-      "foreignKey": "problemId",
-      "options": {
-        "nestRemoting": true
-      }
-    },
-    "submission": {
-      "type": "belongsTo",
-      "model": "User",
-      "foreignKey": "userId",
+      "model": "Course",
+      "foreignKey": "courseId",
       "options": {
         "nestRemoting": true
       }
@@ -49,7 +33,15 @@
     "human": {
       "type": "belongsTo",
       "model": "Human",
-      "foreignKey": "userId",
+      "foreignKey": "humanId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "humanRole": {
+      "type": "belongsTo",
+      "model": "HumanRole",
+      "foreignKey": "roleId",
       "options": {
         "nestRemoting": true
       }

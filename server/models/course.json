@@ -22,7 +22,16 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "userRoleCourses": {
+      "type": "hasMany",
+      "model": "UserRoleCourse",
+      "foreignKey": "courseId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }
