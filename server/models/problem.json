@@ -18,9 +18,6 @@
     "description": {
       "type": "string",
       "required": true
-    },
-    "test": {
-      "type": "object"
     }
   },
   "validations": [],
