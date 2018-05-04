@@ -17,15 +17,15 @@
     "submissions": {
       "type": "hasMany",
       "model": "Submission",
-      "foreignKey": "user_id",
+      "foreignKey": "userId",
       "options": {
         "nestRemoting": true
       }
     },
     "userRoleCourses": {
       "type": "hasMany",
-      "model": "User_role_course",
-      "foreignKey": "human_id",
+      "model": "UserRoleCourse",
+      "foreignKey": "humanId",
       "options": {
         "nestRemoting": true
       }
