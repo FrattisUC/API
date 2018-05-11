@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "start": "node .",
     "test": "NODE_ENV=test mocha test/**/*.test.js",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "console": "loopback-console"
   },
   "dependencies": {
     "compression": "^1.0.3",
