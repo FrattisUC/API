@@ -9,7 +9,8 @@ let checkBelongsToIntegrity = function (ctx, next) {
       return { modelName: rel.model, fk: rel.foreignKey, type: rel.type };
     });
 
-    /* On utilise Lodash pour transformer l'objet des relations en Tableau de la forme
+    // Utiliza Lodash para transformar los objetos de las relaciones en tablas de la forma:
+    /*
       [
         { modelName: 'achat', fk: 'achat_id', type: 'belongsTo' },
         { modelName: 'FED_AGENT', fk: 'agent_rfagent', type: 'belongsTo' }
@@ -17,9 +18,9 @@ let checkBelongsToIntegrity = function (ctx, next) {
     */
 
     let thisModel = ctx.Model;
-    // Le message qui sera renvoyé en cas d'échec de vérification des contraintes d'intégrité
+    // The message here will be returned in case of failure to check integrity constraints
     let message = "";
-    // Le tableau des promises correspondant aux requêtes vérifiants les contraintes
+    // The table of promises corresponding to the requests verifying the constraints
     let promiseArray = [];
 
     relationsArray.forEach(function (relation) {
@@ -28,7 +29,7 @@ let checkBelongsToIntegrity = function (ctx, next) {
         let parentModel = thisModel.app.models[parentModelName];
         let parentId = ctx.instance[relation.fk];
 
-        // On cherche le modèle parent qui correspond à l'id demandé pour le modèle enfant...
+        // El modelo padre aquí corresponde al id demandado por el modelo hijo
         promiseArray.push(parentModel.findById(parentId).then(function (parentInstance) {
           if (parentInstance === null) {
             message += 'No ' + parentModelName + ' with "' + parentId + '" id. ';
@@ -38,9 +39,10 @@ let checkBelongsToIntegrity = function (ctx, next) {
       }
     }
     );
-
-    /* Une fois que toutes les promesses ont été déterminées et conduisent vers un message en cas de non respect de la contrainte d'intégrité,
-    on les regroupe dans une promesse commune résolue quand toutes sont résolues et qui renvoit le message en cas de non respect de contrainte */
+    
+    // Once all the promises have been determined and lead to a message in case of non respect of the integrity constraint,
+    // they are grouped together in a common promise resolved when all are resolved and which sends back the message in case
+    // of non-respect of constraint
     Promise.all(promiseArray)
       .then(
         function(){

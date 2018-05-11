@@ -9,7 +9,7 @@ let checkHasManyIntegrity = function (ctx, next) {
       return { modelName: rel.model, fk: rel.foreignKey, type: rel.type };
     });
 
-    /* On utilise Lodash pour transformer l'objet des relations en Tableau de la forme
+    /* On utilise Lodash to transform the object of relations into a table of form
       [
         { modelName: 'achat', fk: 'achat_id', type: 'belongsTo' },
         { modelName: 'FED_AGENT', fk: 'agent_rfagent', type: 'belongsTo' }
@@ -17,9 +17,9 @@ let checkHasManyIntegrity = function (ctx, next) {
     */
 
     let thisModel = ctx.Model;
-    // Le message qui sera renvoyé en cas d'échec de vérification des contraintes d'intégrité
+    // The message here will be returned in case of failure to check integrity constraints
     let message = "";
-    // Le tableau des promises correspondant aux requêtes vérifiants les contraintes
+    // The table of promises corresponding to the requests verifying the constraints
     let promiseArray = [];
 
     relationsArray.forEach(function (relation) {
@@ -42,8 +42,9 @@ let checkHasManyIntegrity = function (ctx, next) {
     }
     );
 
-    /* Une fois que toutes les promesses ont été déterminées et conduisent vers un message en cas de non respect de la contrainte d'intégrité,
-    on les regroupe dans une promesse commune résolue quand toutes sont résolues et qui renvoit le message en cas de non respect de contrainte */
+    /* Once all the promises have been determined and lead to a message in case of non respect of the integrity constraint,
+    they are grouped together in a common promise resolved when all are resolved and which sends back the message in case
+    of non-respect of constraint */
     Promise.all(promiseArray)
       .then(
       function () {

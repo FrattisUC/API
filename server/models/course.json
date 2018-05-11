@@ -33,7 +33,7 @@
     }
   },
   "mixins": {
-  "HasManyIntegrityCheck": {}
+    "HasManyIntegrityCheck": {}
   },
   "acls": [],
   "methods": {}
