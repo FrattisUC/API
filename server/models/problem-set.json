@@ -37,6 +37,9 @@
       "through": "ProblemProblemSet"
     }
   },
+  "mixins": {
+    "HasManyIntegrityCheck": {}
+  },
   "acls": [],
   "methods": {}
 }
