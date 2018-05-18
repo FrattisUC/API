@@ -11,8 +11,7 @@ const request = require('supertest');
 
 
 
-describe('Deletions', () => {
-    before(helper.givenEmptyDatabase);
+describe('Problem Routes', () => {
     Problem.create({name: "Name", description: "Description"}).then(
         res => {
             ApiProblems(res);
