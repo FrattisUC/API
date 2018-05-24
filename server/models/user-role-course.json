@@ -6,6 +6,10 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "BelongsToIntegrityCheck": {},
+    "HasManyIntegrityCheck": {}
+  },
   "properties": {
     "humanId": {
       "type": "number",
@@ -46,9 +50,6 @@
         "nestRemoting": true
       }
     }
-  },
-  "mixins": {
-    "BelongsToIntegrityCheck": {}
   },
   "acls": [],
   "methods": {}

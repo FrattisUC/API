@@ -5,6 +5,9 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "HasManyIntegrityCheck": {}
+  },
   "properties": {
     "name": {
       "type": "string",
@@ -36,9 +39,6 @@
       },
       "through": "ProblemProblemSet"
     }
-  },
-  "mixins": {
-    "HasManyIntegrityCheck": {}
   },
   "acls": [],
   "methods": {}

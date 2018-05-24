@@ -6,6 +6,9 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "HasManyIntegrityCheck": {}
+  },
   "properties": {
     "email": {
       "type": "string",
@@ -30,9 +33,6 @@
         "nestRemoting": true
       }
     }
-  },
-  "mixins": {
-    "HasManyIntegrityCheck": {}
   },
   "acls": [],
   "methods": {}
