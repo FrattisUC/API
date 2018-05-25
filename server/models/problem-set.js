@@ -7,7 +7,7 @@ module.exports = function(Problemset) {
   };
 
   const validateBiggerDate = function(err){
-    if(!biggerDate(this.startTime, this.endTime)){
+    if((this.startTime && this.endTime) && (!biggerDate(this.startTime, this.endTime))){
       err();
     }
   };
