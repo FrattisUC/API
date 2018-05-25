@@ -6,6 +6,9 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "BelongsToIntegrityCheck": {}
+  },
   "properties": {
     "problemId": {
       "type": "number",
@@ -38,14 +41,6 @@
         "nestRemoting": true
       }
     },
-    "submission": {
-      "type": "belongsTo",
-      "model": "User",
-      "foreignKey": "userId",
-      "options": {
-        "nestRemoting": true
-      }
-    },
     "human": {
       "type": "belongsTo",
       "model": "Human",
@@ -54,9 +49,6 @@
         "nestRemoting": true
       }
     }
-  },
-  "mixins": {
-    "BelongsToIntegrityCheck": {}
   },
   "acls": [],
   "methods": {}

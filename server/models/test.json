@@ -5,6 +5,9 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "BelongsToIntegrityCheck": {}
+  },
   "properties": {
     "input": {
       "type": "string",
@@ -34,9 +37,6 @@
         "nestRemoting": true
       }
     }
-  },    
-  "mixins": {
-    "BelongsToIntegrityCheck": {}
   },
   "acls": [],
   "methods": {}

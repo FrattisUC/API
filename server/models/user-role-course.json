@@ -6,6 +6,9 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "BelongsToIntegrityCheck": {}
+  },
   "properties": {
     "humanId": {
       "type": "number",
@@ -47,8 +50,17 @@
       }
     }
   },
-  "mixins": {
-    "BelongsToIntegrityCheck": {}
+  "indexes":{
+    "humanId_roleId_courseId_index": {
+      "keys": {
+        "humanId": 1,
+        "roleId": 1,
+        "courseId": 1
+      },
+      "options": {
+        "unique": true
+      }
+    }
   },
   "acls": [],
   "methods": {}

@@ -6,6 +6,9 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "BelongsToIntegrityCheck": {}
+  },
   "properties": {
     "problemSetId": {
       "type": "number",
@@ -14,6 +17,17 @@
     "problemId": {
       "type": "number",
       "required": true
+    }
+  },
+  "indexes": {
+    "problemSet_problem_index": {
+      "keys": {
+        "problemSetId": 1,
+        "problemId": 1
+      },
+      "options": {
+        "unique": true
+      }
     }
   },
   "validations": [],
@@ -34,9 +48,7 @@
         "nestRemoting": true
       }
     }
-  },
-  "mixins": {
-    "BelongsToIntegrityCheck": {}
+
   },
   "acls": [],
   "methods": {}
