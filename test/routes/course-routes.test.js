@@ -6,7 +6,7 @@ const uuid = require('uuid-v4');
 const Course = app.models.Course;
 const Human = app.models.Human;
 const Role = app.models.HumanRole;
-const UserRoleCourses = app.models.UserRoleCourses;
+const UserRoleCourse = app.models.UserRoleCourse;
 
 const request = require('supertest');
 
@@ -185,51 +185,54 @@ describe('Course Routes', () => {
                 });
             });
 
-            describe('PUT /api/courses/{id}/userRoleCourses', () => {
+            describe('PUT /api/courses/{id}/userRoleCourses/{fk}', () => {
                 it('should respond with json', (done) => {
                     
+                    UserRoleCourse.findOne({where:{ courseId: c.id }}).then( (urc) => {
+                        let body  = {
+                            roleId: 3
+                        };
 
-                      
-                    request(app)
-                        .put('/api/courses/'+c.id+'/userRoleCourses')
+                        request(app)
+                        .put('/api/courses/'+c.id+'/userRoleCourses/'+urc.id)
                         .set('Accept', 'application/json')
                         .send(body)
                         .expect('Content-Type', /json/)
                         .expect(200, done);
+
+                    });
                 });
             });
         });
     };
 
 
-    // describe('DELETE /api/problems/{id}', () => {
-    //     it('should respond with json', (done) => {
-    //         Problem.create({name: "Name", description: "Description"}).then(
-    //             res => {
-    //                 request(app)
-    //                 .delete('/api/Problems/'+res.id)
-    //                 .set('Accept', 'application/json')
-    //                 .expect('Content-Type', /json/)
-    //                 .expect(200, done);
-    //             }
-    //         );
-    //     });
-    // });
+    describe('DELETE /api/courses/{id}', () => {
+        it('should respond with json', (done) => {
+            Course.create({ name: "Nombre Seccion 2", section: 3, year: 2018, period: 1}).then(
+                res => {
+                    request(app)
+                    .delete('/api/Problems/'+res.id)
+                    .set('Accept', 'application/json')
+                    .expect('Content-Type', /json/)
+                    .expect(200, done);
+                }
+            );
+        });
+    });
 
-    // describe('DELETE /api/Problems/{id}/problemSets', () => {
-    //     it('should respond with json', (done) => {
-    //         Problem.create({name: "Name", description: "Description"}).then(
-    //             res => {
-    //                 request(app)
-    //                 .delete('/api/Problems/'+res.id+'/problemSets')
-    //                 .set('Accept', 'application/json')
-    //                 .expect('Content-Type', /json/)
-    //                 .expect(204, done);
-    //             }
-    //         );
-    //     });
-    // });
-
-
+    describe('DELETE /api/courses/{id}/userRoleCourses/', () => {
+        it('should respond with json', (done) => {
+            Course.create({ name: "Nombre Seccion 2", section: 3, year: 2018, period: 1}).then(
+                res => {
+                    request(app)
+                    .delete('/api/courses/'+res.id+'/userRoleCourses/')
+                    .set('Accept', 'application/json')
+                    .expect('Content-Type', /json/)
+                    .expect(204, done);
+                }
+            );
+        });
+    });
 });
 

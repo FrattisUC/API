@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "start": "node .",
     "test": "NODE_ENV=test mocha test/**/*.test.js",
-    "test:delete": "node test/helpers/database.delete.js",
+    "test:delete": "NODE_ENV=test node test/helpers/database.delete.js",
     "test:watch": "npm run test -- --watch",
     "console": "loopback-console"
   },
