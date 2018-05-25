@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "start": "node .",
     "test": "NODE_ENV=test mocha test/**/*.test.js",
+    "test:delete": "node test/helpers/database.delete.js",
     "test:watch": "npm run test -- --watch",
     "console": "loopback-console"
   },
@@ -27,6 +28,7 @@
     "loopback-console": "^1.1.0",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^2.0.0",
+    "uuid-v4": "^0.1.0",
     "validator": "^9.4.1"
   },
   "devDependencies": {

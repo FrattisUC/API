@@ -1,11 +1,12 @@
 const { app, expect } = require('../common');
-const helper = require('./../helpers/database.helper.js')
+const helper = require('./../helpers/database.helper.js');
+const uuid = require('uuid-v4');
 
-/* Get a reference to the Problem model */
+/* Get a reference to Models */
 const Course = app.models.Course;
-// const ProblemSet = app.models.ProblemSet;
-// const Submission = app.model.Submission;
-// const Human = app.model.Human;
+const Human = app.models.Human;
+const Role = app.models.HumanRole;
+const UserRoleCourses = app.models.UserRoleCourses;
 
 const request = require('supertest');
 
@@ -26,8 +27,14 @@ describe('Course Routes', () => {
     );
 
     Course.create({ name: "Nombre Seccion 2", section: 3, year: 2018, period: 1}).then(
-        res => {
-            //ApiProblems(res);
+        c => {
+            const newID = uuid();
+            Human.create({email: "string2@"+newID+".rev", username: "name_"+newID, password: "password", emailVerified: true}).then(
+                h => {
+                    r = { id: 2 };
+                    ApiCoursesUserRoleCourses(c, h, r);
+                }
+            )
         }
     );
     
@@ -146,66 +153,53 @@ describe('Course Routes', () => {
         });
     }
 
-    // const ApiProblemIdProblemSet = (p) => {
+    /* Triple table */
+    const ApiCoursesUserRoleCourses = (c, h, r) => {
 
-    //     describe ('Route /api/Problems/{id}/problemSets', () => {
-    //         describe('GET /api/Problems/{id}/problemSets', () => {
-    //             it('should respond with json', (done) => {
-    //                 request(app)
-    //                 .get('/api/Problems/'+p.id+'/problemSets')
-    //                 .set('Accept', 'application/json')
-    //                 .expect('Content-Type', /json/)
-    //                 .expect(200, done);
-    //             });
-    //         });
+        describe ('Route /api/courses/{id}/userRoleCourses', () => {
+            describe('GET /api/courses/{id}/userRoleCourses', () => {
+                it('should respond with json', (done) => {
+                    request(app)
+                    .get('/api/Courses/'+c.id+'/userRoleCourses')
+                    .set('Accept', 'application/json')
+                    .expect('Content-Type', /json/)
+                    .expect(200, done);
+                });
+            });
             
-    //         describe('POST /api/Problems/{id}/problemSets', () => {
-    //             it('should respond with json', (done) => {
+            describe('POST /api/courses/{id}/userRoleCourses', () => {
+                it('should respond with json', (done) => {
         
-    //                 let body  = {
-    //                     name: "string",
-    //                     description: "string",
-    //                     startTime: "2018-05-11T19:29:24.666Z",
-    //                     endTime: "2018-05-11T23:29:24.666Z",
-    //                     restrictedAccess: false
-    //                   };
+                    let body  = {
+                        humanId: h.id,
+                        roleId: r.id,
+                        courseId: c.id
+                    };
         
-    //                 request(app)
-    //                     .post('/api/Problems/'+p.id+'/problemSets')
-    //                     .set('Accept', 'application/json')
-    //                     .send(body)
-    //                     .expect('Content-Type', /json/)
-    //                     .expect(200, done);
-    //             });
-    //         });
+                    request(app)
+                        .post('/api/courses/'+c.id+'/userRoleCourses')
+                        .set('Accept', 'application/json')
+                        .send(body)
+                        .expect('Content-Type', /json/)
+                        .expect(200, done);
+                });
+            });
 
-    //         describe('PUT /api/Problems/{id}/problemSets/{fk}/rel/', () => {
-    //             it('should respond with json', (done) => {
-    //                 ProblemSet.create({
-    //                     name: "string",
-    //                     description: "string",
-    //                     startTime: "2018-05-11T19:29:24.666Z",
-    //                     endTime: "2018-05-11T23:29:24.666Z",
-    //                     restrictedAccess: false
-    //                 }).then(
-    //                     ps => {
-    //                         let body  = {
-    //                             "problemSetId": p.id,
-    //                             "problemId": ps.id
-    //                           };
-                              
-    //                         request(app)
-    //                             .put('/api/Problems/'+p.id+'/problemSets/rel/'+ps.id)
-    //                             .set('Accept', 'application/json')
-    //                             .send(body)
-    //                             .expect('Content-Type', /json/)
-    //                             .expect(200, done);
-    //                     }
-    //                 );
-    //             });
-    //         });
-    //     });
-    // };
+            describe('PUT /api/courses/{id}/userRoleCourses', () => {
+                it('should respond with json', (done) => {
+                    
+
+                      
+                    request(app)
+                        .put('/api/courses/'+c.id+'/userRoleCourses')
+                        .set('Accept', 'application/json')
+                        .send(body)
+                        .expect('Content-Type', /json/)
+                        .expect(200, done);
+                });
+            });
+        });
+    };
 
 
     // describe('DELETE /api/problems/{id}', () => {

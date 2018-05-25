@@ -1,15 +1,13 @@
 const { app, expect } = require('../common');
 const helper = require('./../helpers/database.helper.js')
 
-/* Get a reference to the Problem model */
+/* Get a reference to Models */
 const Problem = app.models.Problem;
 const ProblemSet = app.models.ProblemSet;
 const Submission = app.model.Submission;
 const Human = app.model.Human;
 
 const request = require('supertest');
-
-
 
 describe('Problem Routes', () => {
     Problem.create({name: "Name", description: "Description"}).then(
